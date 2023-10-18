@@ -30,14 +30,11 @@ const config = {
       dirs: [],
       resolvers: [
         ElementUiResolver({
-          importStyle: false,
+          importStyle: "sass",
         }),
       ],
     }),
   ],
-  experiments: {
-    css: true,
-  },
   module: {
     rules: [
       {
@@ -53,7 +50,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: "sass-loader",
+        loader: "sass-loader",
         type: "css",
       },
       {
