@@ -1,0 +1,23 @@
+{
+  "name": "rspack-issue-vue2-style",
+  "scripts": {
+    "dev": "rspack serve",
+    "build": "rspack build",
+    "serve": "http-server dist -p 3000 -s"
+  },
+  "dependencies": {
+    "element-ui": "2.15.14",
+    "vue": "2.7.14"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^0.3.7",
+    "@ttou/element2-typings": "^2.2.2",
+    "css-loader": "^6.7.4",
+    "http-server": "^14.1.1",
+    "sass": "~1.32.13",
+    "sass-loader": "^13.3.2",
+    "unplugin-vue-components": "^0.25.2",
+    "vue-loader": "npm:@rspack/loader-vue2@15.10.1-alpha.0",
+    "vue-style-loader": "^4.1.3"
+  }
+}
