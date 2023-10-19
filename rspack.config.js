@@ -20,9 +20,21 @@ const config = {
   },
   devServer: {
     historyApiFallback: true,
+    host: "localhost",
     port: 3000,
+    async onListening(devServer) {
+      const address = devServer.server.address();
+
+      console.log(
+        "Rspack Listening on:",
+        `http://${address.address}:${address.port}`
+      );
+    },
   },
   devtool: false,
+  infrastructureLogging: {
+    level: "error",
+  },
   plugins: [
     new VueLoaderPlugin(),
     components({
@@ -39,14 +51,10 @@ const config = {
     rules: [
       {
         test: /\.vue$/,
-        use: [
-          {
-            loader: "vue-loader",
-            options: {
-              experimentalInlineMatchResource: true,
-            },
-          },
-        ],
+        loader: "vue-loader",
+        options: {
+          experimentalInlineMatchResource: true,
+        },
       },
       {
         test: /\.scss$/,
